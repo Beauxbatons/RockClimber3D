@@ -18,11 +18,11 @@ public class Grab : MonoBehaviour
             {
                 if (RightHand)
                 {
-                    animator.SetBool("HandRightUp", true);
+                    animator.SetBool("RightHand", true);
                 }
                 else
                 {
-                    animator.SetBool("HandLeftUp", true);
+                    animator.SetBool("LeftHand", true);
                 }
                 hold = true;
             }
@@ -30,11 +30,11 @@ public class Grab : MonoBehaviour
             {
                 if (RightHand)
                 {
-                    animator.SetBool("HandRightUp", false);
+                    animator.SetBool("RightHand", false);
                 }
                 else
                 {
-                    animator.SetBool("HandLeftUp", false);
+                    animator.SetBool("LeftHand", false);
                 }
 
                 hold = false;
