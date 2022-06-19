@@ -6,17 +6,41 @@ public class Snaping : MonoBehaviour
 {
     public GameObject a;
     public GameObject b;
+    public KeyCode grabKey;
+    private GameObject target;
+    private GameObject player;
 
-    // Start is called before the first frame update
-    void Start()
+
+
+    private void Start()
     {
-        
+      target = GameObject.FindWithTag("Rock");
+     target = GameObject.FindWithTag("Player");
     }
 
-    // Update is called once per frame
+
     void Update()
     {
-        a.transform.position = b.transform.position;
+       
+    //  if (Input.GetKey(grabKey))
+        {
+     // a.transform.position = b.transform.position;
+
+
+        //  GameObject.FindWithTag("Player").transform.position = GameObject.FindWithTag("Rock").transform.position;
+        }
+        
 
     }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if (Input.GetKey(grabKey))
+        {
+            GameObject.FindWithTag("Player").transform.position = GameObject.FindWithTag("Rock").transform.position;
+
+
+        }
+    }
+
 }
