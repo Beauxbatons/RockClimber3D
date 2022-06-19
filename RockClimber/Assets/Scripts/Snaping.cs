@@ -4,43 +4,38 @@ using UnityEngine;
 
 public class Snaping : MonoBehaviour
 {
-    public GameObject a;
-    public GameObject b;
+    //  public GameObject a;
+    //  public GameObject b;
     public KeyCode grabKey;
     private GameObject target;
     private GameObject player;
+    private bool isSnaped;
 
+    
 
 
     private void Start()
     {
       target = GameObject.FindWithTag("Rock");
-     target = GameObject.FindWithTag("Player");
+      player = GameObject.FindWithTag("Player");
     }
 
 
     void Update()
     {
-       
-    //  if (Input.GetKey(grabKey))
-        {
-     // a.transform.position = b.transform.position;
-
-
-        //  GameObject.FindWithTag("Player").transform.position = GameObject.FindWithTag("Rock").transform.position;
-        }
-        
-
-    }
-
-    void OnCollisionEnter(Collision collision)
-    {
         if (Input.GetKey(grabKey))
         {
-            GameObject.FindWithTag("Player").transform.position = GameObject.FindWithTag("Rock").transform.position;
-
-
+            player.transform.position = target.transform.position;
         }
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        isSnaped = true;
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        isSnaped = false;
+    }
 }
