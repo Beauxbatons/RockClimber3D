@@ -23,7 +23,7 @@ public class ActivateObject : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit))
             {
-                if (hit.transform.tag == "cube")
+                if (hit.transform.tag == "Rock")
                 {
 
                     var objectScript = hit.collider.GetComponent<DragAndRotateCube>();

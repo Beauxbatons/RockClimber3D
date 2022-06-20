@@ -9,6 +9,7 @@ public class DragAndRotateCube : MonoBehaviour
     private GameObject target;
     private GameObject player;
 
+    private bool Streching;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,12 +30,14 @@ public class DragAndRotateCube : MonoBehaviour
 
                 if (screenTouch.phase == TouchPhase.Moved)
                 {
-                    player.transform.position = target.transform.position;
+                    Streching = true;
+                    //player.transform.position = target.transform.position;
                 }
 
                 if (screenTouch.phase == TouchPhase.Ended)
                 {
                     isActive = false;
+                    Streching = false;
                 }
             }
         }
