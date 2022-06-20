@@ -15,5 +15,7 @@ public class ObjectSnap : MonoBehaviour
     {
         _streching.snapTarget = this.gameObject;
     }
+
+
    
 }
