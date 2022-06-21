@@ -16,6 +16,12 @@ public class ObjectSnap : MonoBehaviour
         _streching.snapTarget = this.gameObject;
     }
 
+    void DestroyScriptInstance()
+    {
 
-   
+        Destroy(this);
+    }
+
+  
+
 }

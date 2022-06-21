@@ -4,16 +4,19 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    float dirx, dirY;
-    Rigidbody rb;
-    void Start()
-    {
-        rb = GetComponent<Rigidbody>();
-    }
+    public GameObject objToDestroy;
+    public GameObject particle;
+     void OnTriggerEnter(Collider other)
+      {
+         if (other.gameObject.tag == "Player")
+             Instantiate(particle);
 
-    // Update is called once per frame
-    void Update()
-    {
-        dir
-    }
+         // Destroy(objToDestroy);
+
+         GameOver.gameOver = true;
+
+       
+    } 
+      
+   
 }
