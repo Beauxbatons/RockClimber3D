@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class GameOver : MonoBehaviour
 {
+    //Restart and Quit buttons in the game over menu. Restart is loading according to the name of the scene.
+
+
     public static bool gameOver;
     public GameObject gameOverPanel;
     void Start()
@@ -16,7 +19,7 @@ public class GameOver : MonoBehaviour
     {
         if (gameOver)
         {
-            Time.timeScale = 0;
+            Time.timeScale = 1;
             gameOverPanel.SetActive(true);
         }
     }

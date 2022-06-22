@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Streching : MonoBehaviour
 {
+    //So that since the character is a ragdoll, its arm does not come off its body while it moves
+
+        // the character can climb by holding on the rrocks.
 	public GameObject snapTarget;
 	
 
@@ -26,6 +29,7 @@ public class Streching : MonoBehaviour
 	Transform AttachJoint(Rigidbody rb, Vector3 attachmentPosition)
 	{
 		GameObject go = new GameObject("Attachment Point");
+
 		go.hideFlags = HideFlags.HideInHierarchy;
 		go.transform.position = attachmentPosition;
 
@@ -33,6 +37,7 @@ public class Streching : MonoBehaviour
 		newRb.isKinematic = true;
 
 		var joint = go.AddComponent<ConfigurableJoint>();
+
 		joint.connectedBody = rb;
 		joint.configuredInWorldSpace = true;
 		joint.xDrive = NewJointDrive(force, damping);
@@ -47,10 +52,11 @@ public class Streching : MonoBehaviour
 	private JointDrive NewJointDrive(float force, float damping)
 	{
 		JointDrive drive = new JointDrive();
-		//drive.mode = JointDriveMode.Position;
+
 		drive.positionSpring = force;
 		drive.positionDamper = damping;
 		drive.maximumForce = Mathf.Infinity;
+
 		return drive;
 	}
 }

@@ -7,16 +7,24 @@ public class Enemy : MonoBehaviour
     public GameObject objToDestroy;
     public GameObject particle;
      void OnTriggerEnter(Collider other)
-      {
-         if (other.gameObject.tag == "Player")
-             Instantiate(particle);
+     {
+        //If the player touches the enemy trigger, it is destroyed
 
-         // Destroy(objToDestroy);
+        if (other.gameObject.tag == "Player")
+             Instantiate(particle, transform.position, transform.rotation);
 
-         GameOver.gameOver = true;
-
+         StartCoroutine(wait());
+         Destroy(objToDestroy);
        
-    } 
-      
-   
+
+        IEnumerator wait()
+        {
+         
+            yield return new WaitForSecondsRealtime(1);
+
+            //After a sec game over menu comes.
+            GameOver.gameOver = true;
+
+        }
+     }    
 }

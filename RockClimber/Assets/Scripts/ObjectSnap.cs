@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ObjectSnap : MonoBehaviour
 {
+    //Character climbing by clicking on rocks
     private Streching _streching;
 
         private void Awake()
@@ -21,7 +22,4 @@ public class ObjectSnap : MonoBehaviour
 
         Destroy(this);
     }
-
-  
-
 }

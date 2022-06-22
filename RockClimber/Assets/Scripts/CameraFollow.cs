@@ -2,6 +2,7 @@
 
 public class CameraFollow : MonoBehaviour
 {
+    //The following of the camera by character
     public Transform target;
 
     public float smoothSpeed = 0.125f;

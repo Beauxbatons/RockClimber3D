@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class SawPatrol : MonoBehaviour
 {
+
+    //The saw enemy moves according to two different targets
     public Transform[] wayPoints;
     public int speed;
 
@@ -16,7 +18,7 @@ public class SawPatrol : MonoBehaviour
         transform.LookAt(wayPoints[wayPointIndex].position);
     }
 
-    // Update is called once per frame
+ 
     void Update()
     {
         dista = Vector3.Distance(transform.position, wayPoints[wayPointIndex].position);
